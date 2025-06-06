@@ -7,6 +7,7 @@ int my_print_revalpha(void);
 int my_print_digits(void);
 int my_isneg(int n);
 int print_my_comb(void);
+int my_print_comb2(void);
 
 int main(void)
 {
@@ -16,6 +17,7 @@ int main(void)
     my_print_digits();
     my_isneg(n);
     print_my_comb();
+    my_print_comb2();
     return 0;
 }
 
@@ -81,3 +83,18 @@ int print_my_comb()
     }
     return 0;
 }
+
+int my_print_comb2(void)
+{
+    char comb2[10];
+    for (int i = 0; i <= 99; i++){
+        for (int j = i + 1; j < 100; j++){
+            if (i == 98 && j == 99) {
+                sprintf(comb2, "%02d %02d", i, j);
+                write(1, comb2, strlen(comb2));
+            } else {
+                sprintf(comb2, "%02d %02d, ", i, j);
+                write(1, comb2, strlen(comb2));
+            }
+        }
+    }
