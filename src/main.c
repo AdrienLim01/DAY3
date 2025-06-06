@@ -5,13 +5,15 @@
 int my_print_alpha(void);
 int my_print_revalpha(void);
 int my_print_digits(void);
-
+int my_isneg(int n);
 
 int main(void)
 {
+    int n = -10;
     my_print_alpha();
     my_print_revalpha();
     my_print_digits();
+    my_isneg(n);
     return 0;
 }
 
@@ -45,6 +47,16 @@ int my_print_digits(void)
         sprintf(buffer, "%d", i);
         write(1, buffer, strlen(buffer));
         write(1, " ", 1);
+    }
+    return 0;
+}
+
+int my_isneg(int n)
+{
+    if (n < 0){
+        write(1, "N", 1);
+    }else{
+        write(1, "P", 1);
     }
     return 0;
 }
