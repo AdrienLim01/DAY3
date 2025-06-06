@@ -8,6 +8,7 @@ int my_print_digits(void);
 int my_isneg(int n);
 int print_my_comb(void);
 int my_print_comb2(void);
+int my_put_nbr(int n);
 
 int main(void)
 {
@@ -18,6 +19,7 @@ int main(void)
     my_isneg(n);
     print_my_comb();
     my_print_comb2();
+    my_put_nbr(-157317);
     return 0;
 }
 
@@ -97,4 +99,13 @@ int my_print_comb2(void)
                 write(1, comb2, strlen(comb2));
             }
         }
+        return 0;
     }
+
+int my_put_nbr(int n)
+{
+    char chaine_int[50];
+    sprintf(chaine_int, "%d", n);
+    write(1, chaine_int, strlen(chaine_int));
+    return 0;
+}
